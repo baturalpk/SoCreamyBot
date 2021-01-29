@@ -33,9 +33,55 @@ client.on('message', message => {
         else if (message.content.startsWith('#cem')) // #command3
             message.channel.send(process.env.CEM); // #answer3
 
+        else if (message.content.startsWith('#calc'))
+            message.channel.send(doSomeArithmetic(message.content));
+
         else
             message.channel.send(process.env.NOT_FOUND); // `desired command is not supported`
     }
 });
 
 client.login(process.env.TOKEN); // ACCESS_TOKEN (Define your own dotenv variable or directly pass into here.)
+
+function doSomeArithmetic(msg) {
+    const ERROR = 'Oops! There would be an error, try something else.';
+    msg = msg.trim().substr(5);
+    var result;
+    var operands; parseFloat
+
+    if (msg.includes('add')) {
+        operands = msg.split('add');
+        if (operands.length != 2)
+            return ERROR;
+        else
+            result = parseFloat(operands[0]) + parseFloat(operands[1]);
+    }
+    else if (msg.includes('sub')) {
+        operands = msg.split('sub');
+        if (operands.length != 2)
+            return ERROR;
+        else
+            result = parseFloat(operands[0]) - parseFloat(operands[1]);
+    }
+    else if (msg.includes('mul')) {
+        operands = msg.split('mul');
+        if (operands.length != 2)
+            return ERROR;
+        else
+            result = parseFloat(operands[0]) * parseFloat(operands[1]);
+    }
+    else if (msg.includes('div')) {
+        operands = msg.split('div');
+        if (operands.length != 2)
+            return ERROR;
+        else
+            result = parseFloat(operands[0]) / parseFloat(operands[1]);
+    }
+    else
+        return ERROR;
+
+    if (isNaN(result))
+        return ERROR;
+    else
+        return result + '';
+}
