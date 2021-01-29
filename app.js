@@ -45,10 +45,11 @@ client.login(process.env.TOKEN); // ACCESS_TOKEN (Define your own dotenv variabl
 
 function doSomeArithmetic(msg) {
     const ERROR = 'Oops! There would be an error, try something else.';
-    msg = msg.trim().substr(5);
+    msg = msg.trim().substr(5); // Clear all the whitespaces then remove the command prefix
     var result;
-    var operands; parseFloat
+    var operands;
 
+    // The calculation part
     if (msg.includes('add')) {
         operands = msg.split('add');
         if (operands.length != 2)
@@ -80,6 +81,7 @@ function doSomeArithmetic(msg) {
     else
         return ERROR;
 
+    // Check the result whether it is consistent or not.
     if (isNaN(result))
         return ERROR;
     else
