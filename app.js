@@ -150,3 +150,24 @@ async function PlayMusic(message) {
         });
     });
 }
+
+/**
+ * Clears the text chat where the command was executed.
+ * @param {Discord.Message} msg 
+ */
+async function ClearChat(msg) {
+    
+    var count = parseInt(msg.content.substr(6 + PREFIX.length));
+
+    if (isNaN(count)) {
+        msg.channel.send("Invalid parameter. Try with a valid integer value!")
+        return;
+    }
+
+    msg.channel.bulkDelete(count + 1); // Delete messages up to the desired count + the command itself
+    await msg.reply(`Deleted ${count} messages succesfully 🗑️`)
+        .then(message => {
+            message.delete({timeout: 3000}); // Destroy 'success message' after 3 seconds.
+        })
+        .catch(err => {console.log(err)})
+}
