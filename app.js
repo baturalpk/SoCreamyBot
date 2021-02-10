@@ -73,7 +73,7 @@ client.login(process.env.TOKEN); // DISCORD_ACCESS_TOKEN (Define your own token 
  */
 function DoSomeArithmetic(msg) {
     const ERROR = 'Oops! There would be an error, try something else.';
-    msg = msg.trim().substr(5); // Clear all the whitespaces then remove the command prefix
+    msg = msg.trim().substr(PREFIX.length + 4); // Clear all the whitespaces then remove the command prefix
     var result;
     var operands;
 
