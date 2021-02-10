@@ -3,6 +3,10 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const ytdl = require("discord-ytdl-core");
 const { YTSearcher } = require('ytsearcher');
+var http = require('http');
+http.createServer((req, res) => {
+    res.write('Hey! 👋'); 
+}).listen(process.env.PORT || 3000);
 
 // You should define your own YT_API token below (@process.env.YT_API) to avoid from restrictions of new YouTube Data API.
 const searcher = new YTSearcher(process.env.YT_API); 
