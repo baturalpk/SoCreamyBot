@@ -1,7 +1,10 @@
 ## SoCreamyBot
-A Discord bot built for fun with Discord.js
+An ordinary Discord bot built for fun with Discord.js
+* Give a try on your Discord server: 
+  - https://discord.com/oauth2/authorize?client_id=804465861963415563&scope=bot&permissions=8
+  - !!! The bot's deployed on a free tier Heroku dyno. So you need to wake it up by pinging following URL (If you've already added the bot in your server, then you can see the bot is sleeping or not): https://so-creamy-bot.herokuapp.com/start
 
-## Setup
+## Custom Setup
 1) Git-clone or download the repository.
 
 2) Execute the following command in the project directory to install npm dependencies:
@@ -20,6 +23,4 @@ You can use [official Discord documentation](https://discord.com/developers/docs
   ```
 6) Finally, you can host the app on cloud hosting services such as Heroku, Glitch or AWS after some tests and minor tweaks on your local environment.
    * NOTE: Ffmpeg setup was a bit problematic for Heroku, but this [buildpack](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) will overcome the issue.
-
-
-#### README will be updated...
+   
