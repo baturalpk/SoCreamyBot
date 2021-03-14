@@ -24,3 +24,9 @@ You can use [official Discord documentation](https://discord.com/developers/docs
 6) Finally, you can host the app on cloud hosting services such as Heroku, Glitch or AWS after some tests and minor tweaks on your local environment.
    * NOTE: Ffmpeg setup was a bit problematic for Heroku, but this [buildpack](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) will overcome the issue.
    
+## Basic Commands
+* Default Prefix: ##
+1) Hey 👋: Prefix + <strong>hey</strong>
+2) Simple Math 🧮: Prefix + <strong>calc</strong> + number1 + <strong>MathOperatorName(add/sub/mul/div)</strong> + number2
+3) Music Player 🎧: Prefix + <strong>play</strong> + SearchKeyword/YouTube_URL
+4) Clear Chat Messages 🧹: Prefix + <strong>clear</strong> + NumberOfChatMessages
